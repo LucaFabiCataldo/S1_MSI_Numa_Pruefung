@@ -1,0 +1,42 @@
+#header{
+  background-color: #101014;
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.headerBlock{
+  background-color: #9ca1a3;
+  color: #ffffff;
+  width: 25%;
+  height: 60px;
+  align-items: center;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.activePage{
+  background-color: #1d2f2d;
+}
+
+.inactivePage{
+  background-color: #9ca1a3;
+}
+
+#currentPage{
+  background-color: #101014;
+  height: calc(100vh - 60px);
+  width: 100vw;
+  margin-top: 60px;
+}
+
+input {
+  accent-color: #57CDA5;
+}
+
+p{
+  margin: 0;
+}
