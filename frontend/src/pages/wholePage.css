@@ -22,9 +22,26 @@
     width: calc(100% - 28px);
 }
 
+.resultsBlock{
+    display: flex;
+    flex-direction: column;
+    background-color: #18181c;
+    padding: 14px;
+    border-radius: 8px;
+    width: calc(100% - 28px);
+    display: flex;
+    justify-content: center;
+}
+
 .radioArea{
     display: flex;
     flex-direction: column;
+}
+
+#allResults{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 #drawArea{

@@ -1,10 +1,10 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
-import NewtonIteration from './pages/NewtonIteration'
-import GaussElimination from './pages/GaussElimination';
-import LRZerlegung from './pages/LR';
-import SplineInterpolation from './pages/SplineInterpolation';
+import NewtonIteration from "./pages/NewtonIteration";
+import GaussElimination from "./pages/GaussElimination";
+import LRZerlegung from "./pages/LR";
+import SplineInterpolation from "./pages/SplineInterpolation";
 
 function App() {
   const [page, setPage] = useState("Newton");
@@ -20,7 +20,7 @@ function App() {
       case "Spline":
         return <SplineInterpolation />;
       default:
-        return <NewtonIteration/>;
+        return <NewtonIteration />;
     }
   };
 
@@ -33,15 +33,17 @@ function App() {
     </div>
   );
 
-  return (
-    <>
+  /*
       <header id="header">
         {menuItem("Newton", "NewtonIteration")}
         {menuItem("Gauss", "Gauß-Elimination")}
         {menuItem("LR", "LR-Zerlegung")}
         {menuItem("Spline", "Spline-Interpolation")}
       </header>
+  */
 
+  return (
+    <>
       <div id="currentPage">
         {page === "Newton" && <NewtonIteration />}
         {page === "Gauss" && <GaussElimination />}
@@ -49,7 +51,7 @@ function App() {
         {page === "Spline" && <SplineInterpolation />}
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
