@@ -6,7 +6,6 @@ export default function DrawNewton({
   width,
   height,
   iterations = [],
-  // FIX: brauchbare Default-Domain (dein altes domain={xMin,xMax,...} ist kaputt, weil xMin etc. da noch nicht existieren)
   domain = { xMin: -5, xMax: 5, yMin: -5, yMax: 5 },
   startValue,
   samples = 500,
