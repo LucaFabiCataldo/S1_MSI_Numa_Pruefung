@@ -14,9 +14,9 @@ import DrawNewtonNull from "../drawservice/DrawNewtonNull";
 
 function NewtonIteration() {
   // Schaubild-Settings
-  const [startValue, setStartValue] = useState(0.5);
+  const [startValue, setStartValue] = useState(0.9);
   const [xScale, setXScale] = useState(1);
-  const [yScale, setYScale] = useState(2);
+  const [yScale, setYScale] = useState(1);
 
   // Newton-Settings
   const [selected, setSelected] = useState({
@@ -27,7 +27,7 @@ function NewtonIteration() {
     null: "0",
   });
 
-  const [numIteration, setNumIteration] = useState(3);
+  const [numIteration, setNumIteration] = useState(10);
   const [daempfung, setDaempfung] = useState(1);
 
   const [functions, setFunctions] = useState([]);
@@ -114,36 +114,36 @@ function NewtonIteration() {
           <p>Einstellungen Schaubild</p>
 
           <div className="settingsBlock" id="startVal">
-            <p>Startwert: {startValue.toFixed(2)}</p>
+            <p>Startwert: {startValue.toFixed(3)}</p>
             <input
               type="range"
-              min={-20}
-              max={20}
-              step={0.01}
+              min={-15}
+              max={15}
+              step={0.001}
               value={startValue}
               onChange={(e) => setStartValue(Number(e.target.value))}
             />
           </div>
 
-          <div className="settingsBlock" id="iterationNum">
-            <p>x-Scale: {xScale.toFixed(2)}</p>
+          <div className="settingsBlock" id="xScale">
+            <p>x-Scale: {xScale.toFixed(3)}</p>
             <input
               type="range"
-              min={1}
+              min={0.001}
               max={15}
-              step={0.01}
+              step={0.001}
               value={xScale}
               onChange={(e) => setXScale(Number(e.target.value))}
             />
           </div>
 
           <div className="settingsBlock" id="iterationNum">
-            <p>y-Scale: {yScale.toFixed(2)}</p>
+            <p>y-Scale: {yScale.toFixed(3)}</p>
             <input
               type="range"
-              min={0.05}
+              min={0.001}
               max={20}
-              step={0.01}
+              step={0.001}
               value={yScale}
               onChange={(e) => setYScale(Number(e.target.value))}
             />
@@ -171,7 +171,7 @@ function NewtonIteration() {
             <input
               type="range"
               min={0}
-              max={15}
+              max={50}
               step={1}
               value={numIteration}
               onChange={(e) => setNumIteration(Number(e.target.value))}
@@ -218,7 +218,7 @@ function NewtonIteration() {
             <p>Delta-X</p>
             <DrawNewtonDistance
               width={275}
-              height={450}
+              height={400}
               iterations={iterations}
             />
           </div>
@@ -226,7 +226,7 @@ function NewtonIteration() {
             <p>Anäherung an Referenznullstelle: {selected["null"]}</p>
             <DrawNewtonNull
               width={275}
-              height={450}
+              height={400}
               iterations={iterations}
               currentNull={selected["null"]}
             />

@@ -1,0 +1,8 @@
+#startVal{
+    position: absolute;
+    width: calc(100vw - 75px);
+}
+
+#xScale{
+    margin-top: 48px;
+}
